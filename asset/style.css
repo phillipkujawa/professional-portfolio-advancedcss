@@ -1,0 +1,318 @@
+/* define variables for the different colors*/
+:root {
+    --background-color: #00E3AA;
+    --header-background-color: #000000;
+    --navbar-color: #FEFDF5;
+    --body-font: "PP Formula, Neue Montreal, sans-serif";
+    --workgrid-section-bgcolor: #D3FFA6;
+    --side-border: #000000;
+
+  }
+  
+  body {
+    font-family: var(--body-font);
+    line-height: 1.5;
+    background-color:  var(--background-color);
+  }
+  
+  /* Create header with flexbox */
+  header {
+    background-color: var(--header-background-color);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 1%;
+  }
+  header img {
+    border-radius: 50%;
+  }
+  
+  header h1 {
+    font-size: 55px;
+    line-height: normal;
+    padding: 0 1% 0 1%;
+  }
+  
+  header h1 a {
+    text-decoration: none;
+    color: var(--navbar-color);
+  }
+  header nav {
+    margin-left: auto;
+  }
+  
+  /* set nav bar links to flex items */
+  .nav-bar {
+    display: flex;
+    align-items: flex-end;
+    color: var(--navbar-color);
+  }
+  
+  .nav-bar li {
+    padding: 5px;
+    list-style-type: none;
+  }
+  
+  .nav-bar a {
+    color: var(--navbar-color);
+    font-size: 30px;
+    text-decoration: none;
+    padding: 5px 10px;;
+  }
+  
+  /* change the color and shadow on hover for topNav */
+  .nav-bar a:hover {
+    -webkit-box-shadow: 0 0 1rem rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.6);
+    background-color: #3434EF;;
+    color:  var(--navbar-color);
+  }
+  
+  /* Main container as grid makes two columns*/
+  .container {
+    width: 100%;
+    padding-bottom: 100px;
+    margin: 40px auto 40px auto;
+    display: grid;
+    grid-template-columns: 16% 76%;
+    gap: 2%;
+  }
+  
+  .page-section {
+    border-right: 4px solid var(--side-border);
+    font-size: 40px;
+    text-align: end;
+    padding-right: 15px;
+  }
+  #section-background {
+  background-color: var(--workgrid-section-bgcolor);
+  padding: 1%;
+ }
+  
+  h2 {
+    color: var( --header-background-color);
+    text-align: end;
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: 900;
+  }
+  .profile {
+    width: 20%;
+    margin: 0 2% 1% 0;
+    border: 5px solid var(--IMAGE-BORDER);
+    float: left;
+  
+  }
+  
+  /* Second grid - grid for work section  */
+  #work-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-areas:
+      "p0 p1"
+      "p2 p3";
+      grid-column-gap: 20px;
+      grid-row-gap: 20px;
+    background-color: var(--workgrid-section-bgcolor);
+  }
+  
+  #work-grid a {
+    text-decoration: none;
+  }
+  
+  /* Grid areas */
+  .p0 {
+    grid-area: p0;
+  }
+  .p1 {
+    grid-area: p1;
+  }
+  .p2 {
+    grid-area: p2;
+  }
+  .p3 {
+    grid-area: p3;
+  }
+  
+  figure {
+    position: relative;
+    border: 5px solid var(--header-background-color);
+    background-color: white;
+  }
+  figcaption {
+    background-color: var(--workgrid-section-bgcolor);
+    padding: 10px;
+    position: absolute;
+    bottom: 20px;
+
+  } 
+
+  #work-grid img {
+    object-fit: cover;
+    width: 100%;
+    filter: grayscale(50%); 
+    opacity: 70%;
+  }
+
+  /* hover the different projects and make them bigger. This was one of the criteria*/
+  
+  #work-grid figure:hover {
+    transform: scale(1.15);
+  }
+
+  #work-grid img:hover,
+  #work-grid figure:hover {
+    filter: sepia(0%);
+    opacity: 100%;
+    transition: 400ms;
+  }
+  footer {
+    padding: 10px;
+    clear: both;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+}
+  
+  
+/* THIS IS WHERE I START MEDIA QUERIES - 1280 pixels or below the below CCS runs */  
+  @media screen and (max-width: 1280px) {
+  
+    header {
+      background-color: var(--header-background-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0;
+    }
+  
+    header h1 {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0;
+      text-align: center;
+    }
+    header a {
+      text-align: center;
+    }
+    header nav {
+      margin-left: auto;
+      display: flex;
+    justify-content: center;
+    }
+    nav {
+    width: 100%;
+    }
+  
+    .container {
+      width: 95%;
+      display: grid;
+      grid-template-columns: repeat(500px, 1fr);
+    }
+  
+    #work-grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "p0"
+        "p1"
+        "p2"
+        "p3";
+    }
+   
+    h2 {
+      text-align: center;
+    }
+  
+    #work-grid img {
+      height: 190px;
+    }
+  
+  }
+  /* 855 pixels or below the below CCS runs */
+  @media screen and (max-width: 855px) {
+    header {
+      background-color: var(--header-background-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0;
+    }
+    header h1 {
+      width: 100%;
+      font-size: 30px;
+      margin: 0 auto;
+      padding: 0;
+      text-align: center;
+    }
+    .nav-bar a {
+      text-align: center;
+      font-size: 25px;
+    }
+    .page-section {
+      border-right: 0;
+      border-bottom: 4px solid var(--side-border);
+      text-align: end;
+      padding-right: 7px;
+      
+    }
+    .container {
+      width: 95%;
+      display: grid;
+      grid-template-columns: 100%;
+      padding-bottom: 40px;
+      margin: 40px auto 30% auto;
+    }
+  }
+  /* 580 pixels or below the below CCS runs */
+  @media screen and (max-width: 580px) {
+    header {
+      background-color: var(--header-background-color);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0;
+    }
+    header h1 {
+      width: 100%;
+      font-size: 30px;
+      margin: 0 auto;
+      padding: 0;
+      text-align: center;
+    }
+    .nav-bar a {
+      text-align: center;
+      font-size: 20px;
+    }
+    header nav {
+      margin-left: auto;
+      display: flex;
+      justify-content: center;
+    }
+    nav {
+      width: 100%;
+      }
+
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    h2 {
+      text-align: center;
+      font-size: 0.6em;
+      font-weight: 900;
+
+    }
+    .container {
+      width: 95%;
+      display: grid;
+      grid-template-columns: 100%;
+      padding-bottom: 40px;
+      margin: 40px auto 40% auto;
+    }
+  }
