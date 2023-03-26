@@ -26,6 +26,7 @@ Live URL Link: https://phillipkujawa.github.io/professional-portfolio-module2/
 ## Contributor
 
 * @phillipkujawa
+* @lernantino
 
 ## License
 
